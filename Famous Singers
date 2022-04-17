@@ -1,0 +1,59 @@
+/* Create table about famous singers and their popular songs */
+CREATE TABLE artists (
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    stage_name TEXT,
+    real_name TEXT
+); 
+
+INSERT INTO artists (stage_name, real_name) VALUES ("Lana del Rey", "Lizzy Grant");
+INSERT INTO artists (stage_name, real_name) VALUES ("Elvis", "Elvis Presley");
+INSERT INTO artists (stage_name, real_name) VALUES ("Katy Perry", "Katy Hudson");
+INSERT INTO artists (stage_name, real_name) VALUES ("Lady Gaga", "Stefani Germanotta");
+INSERT INTO artists (stage_name, real_name) VALUES ("Pink", "Alecia Beth Moore");
+
+CREATE TABLE songs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    artist_id INTEGER,
+    title TEXT,
+    release_year INTEGER,
+    views NUMERIC
+); 
+
+
+INSERT INTO songs (artist_id, title, release_year, views) 
+   VALUES (1, "Summertime Sadness", 2012, 851);
+INSERT INTO songs (artist_id, title, release_year, views) 
+   VALUES (1, "Yound and Beautiful", 2013, 423);
+INSERT INTO songs (artist_id, title, release_year, views) 
+   VALUES (1, "Video Games", 2014, 391);
+INSERT INTO songs (artist_id, title, release_year, views) 
+   VALUES (1, "Diet Mountain Dew", 2021, 35);
+INSERT INTO songs (artist_id, title, release_year, views) 
+   VALUES (1, "Brooklyn Baby", 2014, 206);
+INSERT INTO songs (artist_id, title, release_year, views) 
+   VALUES (1, "Dark Paradise", 2012, 68);
+INSERT INTO songs (artist_id, title, release_year, views) 
+   VALUES (2, "Suspicious Minds", 1969, 2);
+INSERT INTO songs (artist_id, title, release_year, views) 
+   VALUES (2, "Burning Love", 1970, 31);
+INSERT INTO songs (artist_id, title, release_year, views) 
+   VALUES (2, "Jailhouse Rock", 1957, 28);
+INSERT INTO songs (artist_id, title, release_year, views) 
+   VALUES (2, "Don't Be Cruel", 1956, 3);
+INSERT INTO songs (artist_id, title, release_year, views) 
+   VALUES (3, "Unconditionally", 2013, 23);
+INSERT INTO songs (artist_id, title, release_year, views) 
+   VALUES (3, "Part of me", 2019, 4);
+INSERT INTO songs (artist_id, title, release_year, views) 
+   VALUES (3, "Wide Awake", 2019, 6);
+INSERT INTO songs (artist_id, title, release_year, views) 
+   VALUES (3, "Thinking of You", 2008, 2);
+INSERT INTO songs (artist_id, title, release_year, views) 
+   VALUES (3, "Daisies", 2020, 1);
+  
+SELECT * FROM artists;
+
+SELECT stage_name, title
+   FROM artists, songs
+   WHERE artists.id = songs.artist_id;
+   
